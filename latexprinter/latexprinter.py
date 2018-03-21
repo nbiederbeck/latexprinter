@@ -1,9 +1,14 @@
-def lprint(df):
-    """Convenient way to print a pandas.DataFrame
-    in LaTeX booktabs format using siunitx."""
+"""Provide function lprint to print pd.DataFrames."""
+
+
+def lprint(dataframe):
+    """Print a pandas.DataFrame.
+
+    The LaTeX code uses booktabs and siunitx.
+    """
     print(
-        df.to_latex(
-            column_format='S '*len(df.columns),
+        dataframe.to_latex(
+            column_format='S '*len(dataframe.columns),
             index=False,
         )
     )
